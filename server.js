@@ -3,13 +3,12 @@
 const express = require('express')
 const app = express()
 
-require('dotenv').config();
 
 const cors = require('cors')
 app.use(cors())
 
 
-const PORT = process.env.PORT || 3008
+
 
 const time = require('./middleware/date')
 const notFound = require('./middleware/pageNotFound')
@@ -31,10 +30,8 @@ function handleHome(req, res) {
     })
     console.log(req)
 }
-function test(){
-    console.log('test me')
-}
-function run() {
+
+function run(PORT) {
     app.listen(PORT, () => {
         console.log('ruining on ', PORT)
     })
